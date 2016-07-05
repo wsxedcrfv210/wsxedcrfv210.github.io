@@ -1,0 +1,378 @@
+@charset "UTF-8";
+
+/*!
+ * Base
+ */
+
+html {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 14px;
+    height: 100%;
+    line-height: 1.5;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+    color: rgb(0, 0, 0);
+    height: 100%;
+    overflow: hidden;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul { 
+    margin:0; 
+    padding: 0;
+}
+li { 
+    list-style-type: none;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+ /* ************************************************************
+    Page Common
+ ************************************************************ */
+
+#page-main-wrap { 
+    position: absolute;
+    width: 100%; height: 100%;
+    /*background-color: #f55;*/
+    overflow: hidden;
+}
+#page-main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height : 100%;
+    overflow: hidden;
+/*
+    background-color: #555;
+*/
+}
+/*
+.scene-bg { 
+    position: relative;
+    left:50%; top:0px;
+}
+*/
+/* ************************************************************
+    loading
+************************************************************ */
+.progress { 
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+}
+.progress-bar { 
+    border-top: 1px solid rgb(160, 160, 160);
+    position: absolute;
+    top:50%;
+    width: 0%;
+}
+.progress-text {
+    font-family: "Menlo", "Consolas", monospace;
+    font-size: 12px;
+    margin-top: 10px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+.progress-complete .progress-bar {
+    border-top-color: rgb(255, 255, 255);
+}
+
+/* ************************************************************
+    Scene 1
+************************************************************ */
+
+.image-sequence {
+    position: absolute;
+/*
+    position: relative;
+    height: 100%;
+*/
+}
+.image-sequence img {
+/*
+    height: auto;
+*/
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.image-sequence img:first-child {
+    display: inline;
+}
+.sequence-assets {
+    position: absolute;
+    width: 1913px;
+    height:420px;
+    left: 50%;
+    margin-left: -957px;
+    bottom:0;
+}
+
+.instruction {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -50px;
+    width: 100%;
+    text-align: center;
+}
+.instruction .text {
+    margin-top: 1em;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* ************************************************************
+    Scene 2
+************************************************************ */
+
+#scene-2 .scene-bg { 
+    position: absolute;
+/*
+    position: relative;
+    width: 100%;
+    width: 1920px;
+    height : 978px;
+    margin-left: -960px;
+    background: url(../img/bg-3.jpg) no-repeat 0 0;
+*/
+}
+
+#scene-2-content {
+    position: absolute;
+    width: 50%;
+    min-width: 600px;
+    height: 100%;
+    top:0;
+    right: -50%;
+    background-color: #111;
+}
+
+.charts { 
+    position: relative; 
+    margin: 0 auto;
+    width: 600px;
+    height: 600px; 
+    top: 50%;
+    margin-top: -300px;
+    overflow: hidden;
+}
+
+.chart  { 
+    float: left;
+    position: relative; 
+    margin: 20px;
+    width: 240px;
+    height: 240px;
+}
+
+.circle-mask-outer,
+.circle-mask-inner {
+    overflow: hidden;
+    position: absolute;
+    width: 120px;
+    height: 240px;
+}
+
+.circle-mask-outer.left {
+    left: 0;
+}
+.circle-mask-outer.right {
+    right: 0;
+}
+
+.circle-mask-outer.left .circle-mask-inner {
+    left: 100%;
+    -webkit-transform-origin: 0 50%;
+        -ms-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+}
+.circle-mask-outer.right .circle-mask-inner {
+    right: 100%;
+    -webkit-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+}
+
+.circle-body {
+    border-radius: 50%;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+}
+.circle-mask-outer.left .circle-body {
+    right: 0;
+}
+.circle-mask-outer.right .circle-body {
+    left: 0;
+}
+#water .circle-body {
+    background-color: #0078ff;
+}
+#sunshine .circle-body {
+    background-color: #ef6122;
+}
+#birds .circle-body {
+    background-color: #9a22ef;
+}
+#woods .circle-body {
+    background-color: #138600;
+}
+
+.chart-content {
+    position: absolute;
+    left: 20px;
+    top:20px;
+    width: 200px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding-top: 40px;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.chart-content .icon {}
+.chart-content .text { 
+    left: 5px;
+    line-height: 1;
+    position: relative;
+}
+
+.chart-content .percent-number {
+    font-size: 50px;
+    font-weight: bold;
+    /*text-align: right;*/
+}
+.chart-content .percent-symbol {
+    font-size: 30px;
+}
+
+.no-borderradius .circle-wrapper,
+.no-csstransforms .circle-wrapper {
+    display: none;
+}
+
+.no-borderradius .chart-content,
+.no-csstransforms .chart-content {
+
+}
+
+
+/* ************************************************************
+    Scene 3
+************************************************************ */
+.mask {
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height : 100%;
+}
+
+.mask img {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -960px;
+    margin-top: -540px;
+    width: 1920px;
+    height : 1080px;
+}
+
+.mask .bar {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+}
+.mask#apple-1 .bar { background-color: #ff0000; }
+.mask#apple-2 .bar { background-color: #11379d; }
+.mask#apple-3 .bar { background-color: #9a03d9; }
+.mask#apple-4 .bar { background-color: #3cb932; }
+
+.mask .line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.8;
+    top: 0;
+}
+.mask:first-child .line {
+    display: none;
+}
+
+
+/* ************************************************************
+    scene nav
+************************************************************ */
+.scene-nav {
+    background-color: #4d4d4d;
+    position: fixed;
+    top:50%;
+    left:0;
+    margin-top: -62px;
+    padding-top: 1px;
+    z-index: 10;
+}
+.scene-nav li {
+    padding: 0 1px 1px;
+}
+.scene-nav li.active a {
+    background-color: #fff;
+    color:#0060ff;
+    cursor: default;
+}
+.scene-nav a {
+    background-color: #333;
+    color: #fff;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    width: 40px;
+}
