@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Website Vertical Scrolling with jQuery" />
+        <meta name="keywords" content="jquery, vertical, scrolling, scroll, smooth"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    </head>
+    <style>
+        a{
+            color:#fff;
+            text-decoration:none;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+        span.reference{
+            position:fixed;
+            left:10px;
+            bottom:10px;
+            font-size:13px;
+            font-weight:bold;
+        }
+        span.reference a{
+            color:#fff;
+            text-shadow:1px 1px 1px #000;
+            padding-right:20px;
+        }
+        span.reference a:hover{
+            color:#ddd;
+            text-decoration:none;
+        }
+
+    </style>
+    <body>
+
+<!------------------------------------page0  首頁------------------------------------->
+		
+<div class="section page0" id="section0">
+            <p>
+                <br><br><br><br><br><br>
+				FaceBook已成為生活一大部分，而你居然還不知自己適合哪一種粉專?
+            </p>
+			<p>
+               就讓我們透過你日常的一舉一動來找出內心所屬的臉書吧!!
+            </p>
+			
+            	<ul class="nav">
+                	<li><a href="#section1">Next→</a></li>
+            	</ul>
+			
+        </div>
+		
+<!------------------------------------page1  夢中角色------------------------------------->
+		
+        <div class="section page1" id="section1">
+            <p>
+				<br><br>
+                此刻正熟睡的你，你正夢到自己是個不同身分的人，你覺得你是?
+            </p>
+			<div class="Iam">
+	  
+				<input id="Iam_2" type="radio" name="Iamwho" value="Iam_2" />
+        		<label class="Iamtype2 Iam_2" for="Iam_2"></label>
+	   
+                <input id="Iam_4" type="radio" name="Iamwho" value="Iam_4" />
+        		<label class="Iamtype4 Iam_4" for="Iam_4"></label>
+                
+	  			<input id="Iam_3" type="radio" name="Iamwho" value="Iam_3" />
+        		<label class="Iamtype3 Iam_3" for="Iam_3"></label>
+	  
+	  			<input id="Iam_1" type="radio" name="Iamwho" value="Iam_1" />
+				<label class="Iamtype1 Iam_1" for="Iam_1"></label>
+	  
+	   			<input id="Iam_5" type="radio" name="Iamwho" value="Iam_5" />
+        		<label class="Iamtype5 Iam_5" for="Iam_5"></label>
+				
+				<ul class="nav">
+                	<li><a id="Iamenter" onclick="selectIam(),Count()" href="#section2">Next→</a></li>
+            	</ul>
+			</div>
+		
+            	
+			
+        </div>
+		
+<!------------------------------------page2  窗戶------------------------------------->
+		
+		 <div class="section page2" id="section2">
+            <p>
+				<br><br>
+                早晨的陽光透過窗戶亮醒了你，你推開窗戶看看外頭，請問看到的景象是?
+            </p>
+			<div class="window">
+        		<input id="window_1" type="radio" name="windows" value="window_1" />
+				<label class="windowtype1 window_1" for="window_1"></label>
+	  
+				<input id="window_2" type="radio" name="windows" value="window_2" />
+        		<label class="windowtype2 window_2" for="window_2"></label>
+                
+                <input id="window_5" type="radio" name="windows" value="window_5" />
+        		<label class="windowtype5 window_5" for="window_5"></label>
+	  
+	  			<input id="window_4" type="radio" name="windows" value="window_4" />
+        		<label class="windowtype4 window_4" for="window_4"></label>
+	  
+                
+                <input id="window_3" type="radio" name="windows" value="window_3" />
+        		<label class="windowtype3 window_3" for="window_3"></label>
+				
+				<ul class="nav">
+                	<li><a id="windowenter" onclick="selectwindow(),Count(),page()" href="#section3">Next→</a></li>
+            	</ul>
+			</div>
+			
+				
+			
+        </div>
+		
+<!------------------------------------page3  電視------------------------------------->
+		
+		 <div class="section page3" id="section3">
+            <p>
+				<br><br>
+                走入客廳，打開電視，吸引你的節目是?
+            </p>
+			
+			<div class="TV">
+				<img class="TVcase" src="images/Q3/TVcase.png" width = "500" height="300">
+                
+                <input id="TV_5" type="radio" name="TVprogram" value="TV_5" />
+        		<label class="TVtype5 TV_5" for="TV_5"></label>
+                
+                <input id="TV_4" type="radio" name="TVprogram" value="TV_4" />
+        		<label class="TVtype4 TV_4" for="TV_4"></label>
+	  
+	  			<input id="TV_3" type="radio" name="TVprogram" value="TV_3" />
+        		<label class="TVtype3 TV_3" for="TV_3"></label>
+                
+                <input id="TV_2" type="radio" name="TVprogram" value="TV_2" />
+        		<label class="TVtype2 TV_2" for="TV_2"></label>
+                
+                <input id="TV_1" type="radio" name="TVprogram" value="TV_1" />
+				<label class="TVtype1 TV_1" for="TV_1"></label>
+	  
+	  			
+				 <ul class="nav">
+					 <li><a id="TVenter" onclick="selectTV(),Count()" href="#section4">Next→</a></li>
+				</ul>
+			</div>
+			
+           
+				
+        </div>
+		
+<!------------------------------------page4  時鐘------------------------------------->
+		
+		 <div class="section page4" id="section4">
+            <p>
+				<br><br>
+                抬頭看了個時間，不同色彩的指針，你的目光最先注視?
+            </p>
+			
+			<div class="clock">
+				
+                <input id="clock_3" type="radio" name="clockprogram" value="clock_3" />
+        		<label class="clocktype3 clock_3" for="clock_3"></label>
+	  
+				<input id="clock_2" type="radio" name="clockprogram" value="clock_2" />
+        		<label class="clocktype2 clock_2" for="clock_2"></label>
+	  
+	  			<input id="clock_4" type="radio" name="clockprogram" value="clock_4" />
+        		<label class="clocktype4 clock_4" for="clock_4"></label>
+                
+                <input id="clock_1" type="radio" name="clockprogram" value="clock_1" />
+				<label class="clocktype1 clock_1" for="clock_1"></label>
+	  
+	   			<input id="clock_5" type="radio" name="clockprogram" value="clock_5" />
+        		<label class="clocktype5 clock_5" for="clock_5"></label>
+				
+				<ul class="nav">
+                <li><a id="clockenter" onclick="selectclock(),Count()" href="#section5">Next→</a></li>
+            	</ul>
+			</div>
+			 
+            
+			 
+        </div>
+
+<!------------------------------------page5   計畫表------------------------------------->
+		 <div class="section page5" id="section5">
+            <p>
+				<br><br>
+                安排好今日的計畫，準備好了就出發吧(將想要的事項拉入格子內)
+            </p>
+			<div style="display: flex;">
+			<div class="diary">
+				<nav style="width:5%;"></nav>
+				<nav style="width:30%;">
+					
+                    <div id="place15" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    				<img id="Img15" src="images/Q5/dia_15.png"  draggable="true" ondragstart="Drag(event)">
+				</div>	
+					<div id="place2" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img2" src="images/Q5/dia_2.png"  draggable="true" ondragstart="Drag(event)">
+					</div>	
+                    <div id="place9" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img9" src="images/Q5/dia_9.png" draggable="true" ondragstart="Drag(event)">
+					</div>	
+					<div id="place3" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img3" src="images/Q5/dia_3.png" draggable="true" ondragstart="Drag(event)">
+					</div>
+					<div id="place5" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img5" src="images/Q5/dia_5.png"  draggable="true" ondragstart="Drag(event)">
+					</div>
+                    <div id="place10" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img10" src="images/Q5/dia_10.png"  draggable="true" ondragstart="Drag(event)">
+					</div>	
+					<div id="place6" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    				<img id="Img6" src="images/Q5/dia_6.png"  draggable="true" ondragstart="Drag(event)">
+				</div>	
+				<div id="place8" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    				<img id="Img8" src="images/Q5/dia_8.png"  draggable="true" ondragstart="Drag(event)">
+				</div>
+				</nav>
+			</div>
+			
+			<div class="diary">
+				<article style="width:30%; margin-top:100px;">
+				<div>
+					<img id="Imgdiary" src="images/Q5/diary_day.png" weight = "450" height="450">
+				</div>
+				<div id="Box1" ondrop="Drop(event)" ondragover="AllowDrop(event)"></div>
+				<div id="Box2" ondrop="Drop(event)" ondragover="AllowDrop(event)"></div>
+				<div id="Box3" ondrop="Drop(event)" ondragover="AllowDrop(event)"></div>
+				<div id="Box4" ondrop="Drop(event)" ondragover="AllowDrop(event)"></div>
+				<div style="clear:both;"></div>
+				</article>
+			</div>
+			
+			<div class="diary">
+				<nav style="width:30%;">
+				
+					<div id="place12" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img12" src="images/Q5/dia_12.png"  draggable="true" ondragstart="Drag(event)">
+					</div>
+                    <div id="place1" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img1" src="images/Q5/dia_1.png" draggable="true" ondragstart="Drag(event)">
+					</div>
+					<div id="place13" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img13" src="images/Q5/dia_13.png"  draggable="true" ondragstart="Drag(event)">
+					</div>
+                    <div id="place4" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img4" src="images/Q5/dia_4.png"  draggable="true" ondragstart="Drag(event)">
+					</div>
+                    <div id="place11" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    					<img id="Img11" src="images/Q5/dia_11.png" draggable="true" ondragstart="Drag(event)">
+					</div>
+                    <div id="place7" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    				<img id="Img7" src="images/Q5/dia_7.png"  draggable="true" ondragstart="Drag(event)">
+				</div>	
+					<div id="place14" ondrop="Drop(event)" ondragover="AllowDrop(event)">
+    				<img id="Img14" src="images/Q5/dia_14.png"  draggable="true" ondragstart="Drag(event)">
+				</div>	
+				
+				</nav>
+				<nav style="width:5%;"></nav>
+				
+
+			</div>
+		 </div><!----<div style="display: flex;">----------->
+			 
+			 <ul class="nav">
+                <li><a id="plankenter" onclick="selectplan(),Count()" href="#section6">Next→</a></li>
+            </ul>
+			 
+			 
+		</div>
+		
+<!------------------------------------page6   鞋櫃------------------------------------->	
+		<div class="section page6" id="section6">
+            <p>
+				<br><br>
+                出門前，再檢查一下自己該帶甚麼物品吧
+            </p>
+			
+			<div class="carbin">
+				<img id="carbin_back" src="images/Q6/carbin_back.png" weight = "540" height="540">
+        		<input id="carbin_1" type="radio" name="carbinprogram" value="carbin_1" />
+				<label class="carbintype1 carbin_1" for="carbin_1"></label>
+	  
+				<input id="carbin_2" type="radio" name="carbinprogram" value="carbin_2" />
+        		<label class="carbintype2 carbin_2" for="carbin_2"></label>
+	  
+	  			<input id="carbin_3" type="radio" name="carbinprogram" value="carbin_3" />
+        		<label class="carbintype3 carbin_3" for="carbin_3"></label>
+	  
+	  			<input id="carbin_4" type="radio" name="carbinprogram" value="carbin_4" />
+        		<label class="carbintype4 carbin_4" for="carbin_4"></label>
+	  
+	   			<input id="carbin_5" type="radio" name="carbinprogram" value="carbin_5" />
+        		<label class="carbintype5 carbin_5" for="carbin_5"></label>
+				
+				<ul class="nav">
+                <li><a id="carbinenter" onclick="selectcarbin(),Count()" href="#section7">Next→</a></li>
+            	</ul>
+			</div>
+			
+        
+        </div>
+		
+<!------------------------------------page7   結果------------------------------------->	
+	<div class="section page7" id="section7">
+		
+			
+				<p>
+				<br><br>
+               	根據你的回答，分析你對類別的感興趣程度，呈現如下:
+            	</p>
+				<br><br><br><br><br><br>
+				<div id="canvas">
+						<div class="circle" id="circles-1"></div>
+						<div class="circle" id="circles-2"></div>
+						<div class="circle" id="circles-3"></div>
+						<div class="circle" id="circles-4"></div>
+						<div class="circle" id="circles-5"></div>
+				</div>
+				<div>
+				<p>公眾人物&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp娛樂&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp品牌商品&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp地點&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp公司組織</p>
+				</div>
+				<br><br>
+		
+				<div>
+					
+					<a class="button button1" href="../home_page/home.html">進入網站</a>
+					<a class="button button2" id="button_test" href="" onclick="website()">進入推薦類別</a>
+					
+				<div>
+   </div>
+
+<!------------------------------------------------------------------------------------->	
+<!------------------------------------------------------------------------------------->	<!------------------------------------------------------------------------------------->	<!------------------------------------------------------------------------------------->	<!------------------------------------------------------------------------------------->	
+			<script src="circles.min.js"></script>
+
+		<script>
+	
+		var public=0;
+		var entertainment=0;
+		var brand=0;
+		var loc=0;
+		var company=0 ;  //粉專類別
+		var count =0;
+		var total_1=0,total_2=0,total_3=0,total_4=0,total_5=0; 
+		var index;
+		var max;
+		var num;
+		var page_url ;
+		var bol;
+	
+/***************************** page1   夢中角色  *****************************/	
+	
+	function selectIam(){	
+		 document.getElementById("Iam_1").disabled=true;
+		 document.getElementById("Iam_2").disabled=true;
+		 document.getElementById("Iam_3").disabled=true;
+		 document.getElementById("Iam_4").disabled=true;
+		 document.getElementById("Iam_5").disabled=true;
+		
+		
+		if (document.getElementById("Iam_1").checked==true){	
+			public++;
+		}
+		
+		if (document.getElementById("Iam_2").checked==true){	
+			entertainment++;
+		}
+	
+		if (document.getElementById("Iam_3").checked==true){	
+			brand++;
+		}
+
+		if (document.getElementById("Iam_4").checked==true){	
+			loc++;
+		}
+			
+		if (document.getElementById("Iam_5").checked==true){	
+			company++;
+		}
+		count++;
+		console.log(public,entertainment,brand,loc,company);
+	}
+			
+/***************************** page2   窗戶  *****************************/				
+		function selectwindow(){	
+		 document.getElementById("window_1").disabled=true;
+		 document.getElementById("window_2").disabled=true;
+		 document.getElementById("window_3").disabled=true;
+		 document.getElementById("window_4").disabled=true;
+		 document.getElementById("window_5").disabled=true;
+		
+		
+		if (document.getElementById("window_1").checked==true){	
+			public++;
+		}
+		
+		if (document.getElementById("window_2").checked==true){	
+			entertainment++;
+		}
+	
+		if (document.getElementById("window_3").checked==true){	
+			brand++;
+		}
+
+		if (document.getElementById("window_4").checked==true){	
+			loc++;
+		}
+			
+		if (document.getElementById("window_5").checked==true){	
+			company++;
+		}
+		count++;
+		console.log(public,entertainment,brand,loc,company);
+	}
+			
+
+/***************************** page3   電視  *****************************/							function selectTV(){	
+		 document.getElementById("TV_1").disabled=true;
+		 document.getElementById("TV_2").disabled=true;
+		 document.getElementById("TV_3").disabled=true;
+		 document.getElementById("TV_4").disabled=true;
+		 document.getElementById("TV_5").disabled=true;
+		
+		
+		if (document.getElementById("TV_1").checked==true){	
+			public++;
+		}
+		
+		if (document.getElementById("TV_2").checked==true){	
+			entertainment++;
+		}
+	
+		if (document.getElementById("TV_3").checked==true){	
+			brand++;
+		}
+
+		if (document.getElementById("TV_4").checked==true){	
+			loc++;
+		}
+			
+		if (document.getElementById("TV_5").checked==true){	
+			company++;
+		}
+		count++;
+		console.log(public,entertainment,brand,loc,company);
+	}
+			
+/***************************** page4   時鐘*****************************/				
+		function selectclock(){	
+		 document.getElementById("clock_1").disabled=true;
+		 document.getElementById("clock_2").disabled=true;
+		 document.getElementById("clock_3").disabled=true;
+		 document.getElementById("clock_4").disabled=true;
+		 document.getElementById("clock_5").disabled=true;
+		
+		
+		if (document.getElementById("clock_1").checked==true){	
+			public++;
+		}
+		
+		if (document.getElementById("clock_2").checked==true){	
+			entertainment++;
+		}
+	
+		if (document.getElementById("clock_3").checked==true){	
+			brand++;
+		}
+
+		if (document.getElementById("clock_4").checked==true){	
+			loc++;
+		}
+			
+		if (document.getElementById("clock_5").checked==true){	
+			company++;
+		}
+		count++;
+		console.log(public,entertainment,brand,loc,company);
+	}
+			
+
+/***************************** page5   計畫表*****************************/
+	
+	function AllowDrop(event){
+    		event.preventDefault();
+	}
+	
+	function Drag(event){
+    	event.dataTransfer.setData("text",event.currentTarget.id);
+	}
+	
+	function Drop(event){
+		var count=0
+		event.preventDefault();
+    	var data=event.dataTransfer.getData("text");
+    	event.currentTarget.appendChild(document.getElementById(data));
+		//第一格放的類別
+
+}
+	
+	function selectplan(){
+			var x= document.getElementById("Box1").innerHTML;
+			/*var xindex = x.substring(35,36);
+			console.log(x);
+			console.log(xindex);*/
+		
+			var y= document.getElementById("Box2").innerHTML;
+			/*var yindex = y.substring(35,36);
+			console.log(yindex);*/
+		
+			var z= document.getElementById("Box3").innerHTML;
+			/*var zindex = z.substring(35,36);
+			console.log(zindex);*/
+		
+			var m= document.getElementById("Box4").innerHTML;
+		
+			if ( x.indexOf("Img1")!=-1 || x.indexOf("Img2")!=-1 || x.indexOf("Img3")!=-1){
+				public++;
+				count++;
+			}
+			
+			if ( x.indexOf("Img4")!=-1 || x.indexOf("Img5")!=-1 || x.indexOf("Img6")!=-1){
+				entertainment++;
+				count++;
+			}
+			
+			if ( x.indexOf("Img7")!=-1 || x.indexOf("Img8")!=-1 || x.indexOf("Img9")!=-1){
+				brand++;
+				loc++;
+				count++;
+			}
+		
+			if ( x.indexOf("Img10")!=-1 || x.indexOf("Img11")!=-1 || x.indexOf("Img12")!=-1){
+				loc++;
+				count++;
+			}
+			
+			if ( x.indexOf("Img13")!=-1 || x.indexOf("Img14")!=-1 || x.indexOf("Img15")!=-1){
+				company++;
+				count++;
+			}
+		/*          **          */
+		
+			if ( y.indexOf("Img1")!=-1 || y.indexOf("Img2")!=-1 || y.indexOf("Img3")!=-1){
+				public++;
+				count++;
+			}
+			
+			if ( y.indexOf("Img4")!=-1 || y.indexOf("Img5")!=-1 || y.indexOf("Img6")!=-1){
+				entertainment++;
+				count++;
+				
+			}
+			
+			if (y.indexOf("Img7")!=-1 || y.indexOf("Img8")!=-1 || y.indexOf("Img9")!=-1){
+				brand++;
+				count++;
+			}
+		
+			if ( y.indexOf("Img10")!=-1 || y.indexOf("Img11")!=-1 || y.indexOf("Img12")!=-1){
+				loc++;
+				count++;
+			}
+			
+			if ( y.indexOf("Img13")!=-1 || y.indexOf("Img14")!=-1 || y.indexOf("Img15")!=-1){
+				company++;
+				count++;
+			}			
+		
+		
+			if ( z.indexOf("Img1")!=-1 || z.indexOf("Img2")!=-1 || z.indexOf("Img3")!=-1){
+				public++;
+				count++;
+			}
+			
+			if ( z.indexOf("Img4")!=-1 || z.indexOf("Img5")!=-1 || z.indexOf("Img6")!=-1){
+				entertainment++;
+				count++;
+				
+			}
+			
+			if ( z.indexOf("Img7")!=-1 || z.indexOf("Img8")!=-1 || z.indexOf("Img9")!=-1){
+				brand++;
+				count++;
+			}
+		
+			if ( z.indexOf("Img10")!=-1 || z.indexOf("Img11")!=-1 || z.indexOf("Img12")!=-1){
+				loc++;
+				count++;
+			}
+			
+			if ( z.indexOf("Img13")!=-1 || x.indexOf("Img14")!=-1 || z.indexOf("Img15")!=-1){
+				company++;
+				count++;
+			}
+		
+				
+			if ( m.indexOf("Img1")!=-1 || m.indexOf("Img2")!=-1 || m.indexOf("Img3")!=-1){
+				public++;
+				count++;
+			}
+			
+			if ( m.indexOf("Img4")!=-1 || m.indexOf("Img5")!=-1 || m.indexOf("Img6")!=-1){
+				entertainment++;
+				count++;
+				
+			}
+			
+			if ( m.indexOf("Img7")!=-1 || m.indexOf("Img8")!=-1 || m.indexOf("Img9")!=-1){
+				brand++;
+				count++;
+			}
+		
+			if ( m.indexOf("Img10")!=-1 || m.indexOf("Img11")!=-1 || m.indexOf("Img12")!=-1){
+				loc++;
+				count++;
+			}
+			
+			if ( m.indexOf("Img13")!=-1 || m.indexOf("Img14")!=-1 || m.indexOf("Img15")!=-1){
+				company++;
+				count++;
+			}
+
+	
+	console.log(public,entertainment,brand,loc,company);
+	
+}
+
+/***************************** page6   鞋櫃*****************************/
+		function selectcarbin(){	
+		 document.getElementById("carbin_1").disabled=true;
+		 document.getElementById("carbin_2").disabled=true;
+		 document.getElementById("carbin_3").disabled=true;
+		 document.getElementById("carbin_4").disabled=true;
+		 document.getElementById("carbin_5").disabled=true;
+		
+		
+		if (document.getElementById("carbin_1").checked==true){	
+			public++;
+		}
+		
+		if (document.getElementById("carbin_2").checked==true){	
+			entertainment++;
+		}
+	
+		if (document.getElementById("carbin_3").checked==true){	
+			brand++;
+		}
+
+		if (document.getElementById("carbin_4").checked==true){	
+			loc++;
+		}
+			
+		if (document.getElementById("carbin_5").checked==true){	
+			company++;
+		}
+		count++;
+		console.log(public,entertainment,brand,loc,company);
+	}
+			
+			
+			
+/***************************** page7   結果*****************************/			
+			
+	  function Count(){
+		  
+			
+		  	
+		  	total_1 = public/count*100;
+		  	total_2 = entertainment/count*100;
+		  	total_3 = brand/count*100;
+		  	total_4 = loc/count*100;
+		  	total_5 = company/count*100;
+		  
+		 var colors = [
+			['#FF8888', '#FF3333'], ['#FCE6A4', '#EFB917'], ['#BEE3F7', '#45AEEA'], ['#66FF66', '#008866'], ['#F4BCBF', '#D43A43']
+		], circles = [];
+
+		for (var i = 1; i <= 5; i++) {
+			var child = document.getElementById('circles-' + i);
+			var precentage;
+				switch(i){
+					case 1: 
+						percentage = total_1;
+						break;
+					case 2: 
+						percentage = total_2;
+						break;
+					case 3: 
+						percentage = total_3;
+						break;
+					case 4: 
+						percentage = total_4;
+						break;
+					case 5: 
+						percentage = total_5;
+						break;
+					default:
+						break;
+				};
+				console.log(percentage);
+				
+
+			circles.push(Circles.create({
+				id:         child.id,
+				value:		percentage,
+				radius:     60,
+				width:      20,
+				colors:     colors[i - 1]
+			}));
+		} 	
+		  console.log(total_1,total_2,total_3,total_4,total_5);
+		  
+        
+		
+	
+			
+					  
+		  index = [total_1,total_2,total_3,total_4,total_5];
+			
+		  max = index[0];
+		  num = 0;
+		  bol = 0;
+
+		  
+		  
+		  for(var i=0 ; i<=4; i++){
+			if (index[i]>max){
+				max = index[i];
+				num = i ;
+			 }
+		  }
+		  
+		}
+		
+			
+		function website(){
+					  page_url = document.getElementById("button_test").href="../home_page/discus_"+(num+1)+".html";
+			}
+
+                       
+		</script>
+        
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
+        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('ul.nav a').bind('click',function(event){
+                    var $anchor = $(this);
+                    
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1500,'easeInOutExpo');
+                    /*
+                    if you don't want to use the easing effects:
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1000);
+                    */
+                    event.preventDefault();
+                });
+            });
+			
+			
+
+        </script>
+    </body>
+</html>
