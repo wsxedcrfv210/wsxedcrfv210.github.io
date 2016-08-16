@@ -328,11 +328,9 @@
                         </form>
                         <script>
                             
-                            $(document).ready(function(){ 
-                                $.get("hex.html",function(data){ //初始將a.html include div#iframe
-                                    $("#div2").html(data);
-                                })
-                            });
+                            $(document).ready(function(){
+                              jQuery('#target').append(hex.html);
+                                });
                             
                         </script>
                         <div id="div2"></div>
