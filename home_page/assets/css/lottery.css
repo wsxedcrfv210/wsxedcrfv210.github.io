@@ -1,0 +1,28 @@
+
+path {
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf path {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: #AAA;
+  color: #fff;
+  border-radius: 2px;
+}
+    
+text {
+  font: 10px sans-serif;
+}
+text2 {
+  font: 20px sans-serif;
+}
+

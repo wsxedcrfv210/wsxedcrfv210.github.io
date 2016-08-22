@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>FB2, find better from basis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <base target="_self" />
+	</head>
+	<body>
+        
+		<!-- Header -->
+			<div id="header">
+				<div class="top">
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/logo.jpg" alt="" /></span>
+							<h1 id="title">FB2</h1>
+							<p>ideas make sence.</p>
+						</div>
+					<!-- Nav -->
+						<nav id="nav">
+							<ul id="menu">
+				<!--<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">HOME</span></a></li>-->
+				            <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Recommand</span></a></li>
+                            <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref" ><span class="icon fa-envelope">Infographic</span></a></li>
+                            <li><a href="#contact"><span class="icon" onclick="discus_show()">討論度</span></a></li>
+                            <li><a href="#contact"><span class="icon" onclick="lottery_show()">抽獎分析</span></a></li>
+							</ul>
+						</nav>
+                </div>
+                <script>
+                    function discus_show(){
+                        document.getElementById('iframe').src="discus_all.html";
+                        jQuery("#select_info").empty();
+                        jQuery("#select_info").append("<option id='all'>全部</option>"); 
+                        jQuery("#select_info").append("<option id='c1'>公眾人物</option>"); 
+                        jQuery("#select_info").append("<option id='c2'>娛樂</option>"); 
+                        jQuery("#select_info").append("<option id='c3'>品牌商品</option>"); 
+                        jQuery("#select_info").append("<option id='c4'>地點</option>"); 
+                        jQuery("#select_info").append("<option id='c5'>公司組織</option>");
+                    }
+                    
+                    function lottery_show(){
+                        document.getElementById('iframe').src="hex_7day.html";
+                        jQuery("#select_info").empty();
+                        jQuery("#select_info").append("<option id='7day'>熱門</option>"); 
+                        jQuery("#select_info").append("<option id='recent'>近期</option>"); 
+                        jQuery("#select_info").append("<option id='t2'>時間</option>");
+                    }
+                    
+                </script>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				</div>
+			</div>
+
+		<!-- Main -->
+			<div id="main" class="one">
+
+				<!-- Intro
+					<section id="top" class="one dark cover">
+						<div class="container">
+                            <img id="image centered" src="images/header_bg(800).png" alt="" />
+							<header>
+								<h2 class="alt">Welcome to <strong>FB2</strong></h2>
+								<p>Facbook's analysis</p>
+							</header>
+                            <a href="#portfolio" class="button scrolly">TESTING</a>
+							<footer>
+                                <a href="#portfolio" class="scrolly" style="float:right;">SKIP</a>
+                            </footer>
+						</div>
+					</section>
+                 -->
+                <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+                <script>    
+                    d3.json('assets/json/discussion_random_this.json', function(data) {
+                        data.values.forEach(function(d) {
+                            d.pageName = d[0];
+                            d.talkAbout = d[1];
+                            d.pageId = d[2];
+                            //console.log(d.pageName);
+                        });
+                        var talkArray = new Array();
+                        var idArray = new Array();
+                        var nameArray = new Array();
+                        data.values.forEach(function(d){
+                            idArray.push(d.pageId);
+                            talkArray.push(d.talkAbout);
+                            nameArray.push(d.pageName);
+                        });
+                        // console.log(idArray); console.log(nameArray);
+                        
+                        var img_url , page_url = "";
+                        var x = document.images;
+                        var i;
+                        for (i = 0; i < 10; i++) {
+                            img_url = "https://graph.facebook.com/" + idArray[i] + "/picture?type=large";
+                            page_url = "https://www.facebook.com/" + idArray[i];
+                            document.getElementById('rank_img'+ (i+1)).src = img_url;
+                            document.getElementById('rank_a'+ (i+1)).href = page_url;
+                            document.getElementById("rank_" + (i+1)).innerHTML = nameArray[i];
+                        }
+                    });
+                </script>
+                
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+                            <img id="image centered" src="images/t1.png" alt="recommand" />
+							<div class="row">
+								<div class="2u 12u$(mobile)">
+									<article class="item">
+										<a id=rank_a1 href="#" class="image fit"><img id=rank_img1 src=""/></a>
+										<header>
+											<h3 id=rank_1>page1名稱</h3>
+										</header>
+									</article>
+                                    
+									<article class="item">
+										<a id=rank_a2 href="#" class="image fit"><img id=rank_img2 src=""/></a>
+										<header>
+											<h3 id=rank_2>page2名稱</h3>
+										</header>
+									</article>
+								</div>
+								<div class="2u 12u$(mobile)">
+									<article class="item">
+										<a id=rank_a3 href="#" class="image fit"><img id=rank_img3 src=""/></a>
+										<header>
+											<h3 id=rank_3>page3名稱</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a id=rank_a4 href="#" class="image fit"><img id=rank_img4 src=""/></a>
+										<header>
+											<h3 id=rank_4>page4名稱</h3>
+										</header>
+									</article>
+								</div>
+								<div class="2u$ 12u$(mobile)">
+									<article class="item">
+										<a id=rank_a5 href="#" class="image fit"><img id=rank_img5 src=""/></a>
+										<header>
+											<h3 id=rank_5>page5名稱</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a id=rank_a6 href="#" class="image fit"><img id=rank_img6 src=""/></a>
+										<header>
+											<h3 id=rank_6>page6名稱</h3>
+										</header>
+									</article>
+								</div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="2u$ 12u$(mobile)">
+									<article class="item">
+										<a id=rank_a7 href="#" class="image fit"><img id=rank_img7 src=""/></a>
+										<header>
+											<h3 id=rank_7>page7名稱</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a id=rank_a8 href="#" class="image fit"><img id=rank_img8 src=""/></a>
+										<header>
+											<h3 id=rank_8>page8名稱</h3>
+										</header>
+									</article>
+								</div>
+                                <div class="2u$ 12u$(mobile)">
+									<article class="item">
+										<a id=rank_a9 href="#" class="image fit"><img id=rank_img9 src=""/></a>
+										<header>
+											<h3 id=rank_9>page9名稱</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a id=rank_a10 href="#" class="image fit"><img id=rank_img10 src=""/></a>
+										<header>
+											<h3 id=rank_10>page10名稱</h3>
+										</header>
+									</article>
+								</div>
+                            </div>
+						
+                        </div>
+					</section>
+                
+                <!-- Contact -->
+					<section id="contact" class="three">
+						<div class="container">
+							<header>
+								<img id="image centered" src="images/t2.png" alt="search pages" />
+							</header>
+                            
+                            <script>
+                            
+                             function selectFunction(){
+                                
+                                if (document.getElementById("all").selected==true)
+                                    document.getElementById('iframe').src = "discus_all.html";
+                                    
+                                else if (document.getElementById("c1").selected==true)
+                                    document.getElementById('iframe').src = "discus_public.html";
+                                    
+                                else if (document.getElementById("c2").selected==true)
+                                    document.getElementById('iframe').src = "discus_entertainment.html";
+                                    
+                                else if (document.getElementById("c3").selected==true)
+                                    document.getElementById('iframe').src = "discus_product.html";
+                                 
+                                else if (document.getElementById("c4").selected==true)
+                                    document.getElementById('iframe').src = "discus_location.html";
+                                 
+                                else if (document.getElementById("c5").selected==true)
+                                    document.getElementById('iframe').src = "discus_company.html";
+                                 
+                                else if (document.getElementById("7day").selected==true)
+                                    document.getElementById('iframe').src = "hex_7day.html";
+
+                                else if (document.getElementById("recent").selected==true)
+                                    document.getElementById('iframe').src = "hex_recent.html";
+
+                                // 抽獎分析的選項：t_all, t1, t2 的判斷是寫這邊 
+                                
+                             }
+                            
+                            </script> 
+                            
+                            <form>
+                                <select id="select_info" onchange="selectFunction()">
+                                    <option id="all" selected="selected">全部</option>
+                                    <option id="c1">公眾人物</option>
+                                    <option id="c2">娛樂</option>
+                                    <option id="c3">品牌商品</option>
+                                    <option id="c4">地點</option>
+                                    <option id="c5">公司組織</option>
+                                    <option id="7day">熱門</option>
+                                    <option io="recent">近期</option>
+                                </select>
+                            </form>
+                            <iframe src="discus_all.html" name="iframe_a" width="100%" scrolling="no" id="iframe">
+                            </iframe>
+                           
+
+                            <form>
+                                <select id="select_info" onchange="selectFunction()">
+                                  
+                                    <option id="7day">熱門</option>
+                                    <option io="recent">近期</option>
+                                </select>
+                            </form>
+        
+                           
+                            
+                            
+					</section>
+
+                    <section id="about" class="four">
+						<div class="container">
+
+							<header>
+								<img id="image centered" src="images/t3.png" alt="about us" />
+							</header>
+
+							<a href="#" class="image featured"><img src="images/group.png" alt="" /></a>
+
+                            <p><strong>FB2</strong>是一個提供使用者想要關注的粉絲專頁資訊，除了已知搜尋目標的使用者，
+                                以特殊條件如：類別、關鍵字名稱、內容類型等搜尋相關資訊，也提供給不知道該如何尋找相關粉絲專頁的使用者，
+                                以各種探索需求的方式分析出符合個人需求的粉絲專頁哦！</br>
+                                除了基本排行以及推薦值得追蹤的粉絲專頁，我們也將整合所有在Facebook上看得到卻不知道的分析資訊，
+                                以最容易理解並具有吸引力的資訊圖像化方式，呈現給使用者潛在希望得知的資訊！</br>
+                            </p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li>
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

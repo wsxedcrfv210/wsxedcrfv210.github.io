@@ -1,0 +1,42 @@
+.profile {
+    border-radius: 50%;
+    border:5px solid #ddd;
+}
+.rank{
+    background-color:#93DAFF;
+    width:10px;
+    height:10px;
+    text-align:center;
+    color:#FFF;
+    font-size:1.5em;
+    
+        }
+.tt{
+    border-bottom:1px #93DAFF solid;
+        }
+.picture{
+    float:left;
+        }
+.rankALL{
+    float:right;
+}
+/* 0815 */
+.tips{
+    float:bottom;
+}
+.tip1{
+     width:500px;
+    height:300px;
+}
+.tip2{
+     width:700px;
+    height:250px;
+}
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: #AAAAAA;
+  color: #fff;
+  border-radius: 2px;
+}

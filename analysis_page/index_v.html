@@ -744,8 +744,19 @@
 		
 			
 		function website(){
-					  page_url = document.getElementById("button_test").href="../home_page/discus_"+(num+1)+".html";
-			}
+            page_url = document.getElementById("button_test").href="../home_page/home.html#contact";
+            if( num == 0 )
+                page_url = document.getElementById("button_test").href="../home_page/home.html#contact";
+            else if ( num == 1 )
+                page_url = document.getElementById("button_test").href="../home_page/home.html#contact";
+            else if ( num == 2 )
+                page_url = document.getElementById("button_test").href="../home_page/home.html#contact";
+            else if ( num == 3 )
+                page_url = document.getElementById("button_test").href="../home_page/home.html#contact";
+            else if ( num == 4 )
+                page_url = document.getElementById("button_test").href="../home_page/home.html#contact";
+					  //page_url = document.getElementById("button_test").href="../home_page/discus_"+(num+1)+".html";
+        }
 
                        
 		</script>
