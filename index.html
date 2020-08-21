@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>Date/Time: <span id="datetime"></span></p>
+    <body>
+        <h1>Hello World</h1>
+        <p>Date/Time:
+            <span id="datetime"></span>
+        </p>
 
-<script>
-var dt = new Date();
-document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
-</script>
-</body>
+        <script>
+            function Date() {
+                var dt = new Date();
+                document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+            }
+            setInterval(Date, 1000);
+        </script>
+    </body>
 </html>
