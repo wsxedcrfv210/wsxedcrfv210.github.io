@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>蔡蔡嘉昇</title>
+    </head>
     <body>
-        <h1>Hello World</h1>
-        <p>Date/Time:
-            <span id="demo"></span>
+        <h1>蔡嘉昇蔡嘉昇倒數計時器</h1>
+        <p>距離蔡嘉昇蔡嘉昇還有:
+            <span id="GatheringTime"></span>
         </p>
 
         <script>
-            var myVar = setInterval(myTimer, 1000);
+            var myVar = setInterval(Timer, 1000);
 
-            function myTimer() {
-                var d = new Date();
-                var t = d.toLocaleTimeString();
-                document.getElementById("demo").innerHTML = t;
+            function Timer() {
+                var GatheringTime = new Date(2020, 8, 21, 19,30);
+                var CurrentTime = new Date();
+                
+                var ETA = new Date(GatheringTime-CurrentTime);
+
+                var ETAHour = ETA.getUTCHours()
+                var ETAMinute = ETA.getUTCMinutes()
+                var ETASecond = ETA.getUTCSeconds()
+
+                document.getElementById("GatheringTime").innerHTML = ETAHour+"小時"+ETAMinute+"分"+ETASecond+"秒";
             }
         </script>
     </body>
