@@ -7,11 +7,13 @@
         </p>
 
         <script>
-            function Date() {
-                var dt = new Date();
-                document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+            var myVar = setInterval(myTimer, 1000);
+
+            function myTimer() {
+                var d = new Date();
+                var t = d.toLocaleTimeString();
+                document.getElementById("demo").innerHTML = t;
             }
-            setInterval(Date, 1000);
         </script>
     </body>
 </html>
